@@ -3,11 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 //import * as serviceWorker from './serviceWorker';
-
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import { ApolloProvider } from '@apollo/react-hooks';
+
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
@@ -18,13 +18,18 @@ const client = new ApolloClient({
   cache,
   link
 })
-const cliente = new ApolloClient({
-  cache,
-  link
-})
 
-ReactDOM.render(<ApolloProvider client={client}><ApolloProvider cliente={cliente}>
-  <App /></ApolloProvider></ApolloProvider>,
+
+
+ReactDOM.render(<ApolloProvider client={client}>
+    <div className="header">
+        <a href="#default" className="logo">Rick and Morty API</a>
+        <a className="active" href="/">Home</a>
+
+    </div>
+  <App />
+
+</ApolloProvider>,
    document.getElementById('root'));
 
 

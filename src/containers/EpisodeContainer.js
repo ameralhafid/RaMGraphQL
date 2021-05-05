@@ -2,7 +2,10 @@
 import React from 'react';
 import { useQuery} from '@apollo/react-hooks';
 import {GET_EPISODE} from '../graphql/get-episode';
-import {Episode} from '../components/Episode';
+import { Link}  from "react-router-dom";
+
+import {Button} from "@material-ui/core"
+// import {Episode} from '../components/Episode';
 
 export function EpisodeContainer() {
 const { data } = useQuery(GET_EPISODE);
@@ -22,7 +25,11 @@ return (
  <div className="episode__episode">
  <h4>{episode.episode} </h4>
  </div>
- <p>-------------------------------</p>
+    <Button variant="contained" color="yellow" disableElevation>
+    <Link exact to={`/episode/${episode.id}`}>
+        Episode details ..
+    </Link>
+    </Button>
  </div>
 )}
 
