@@ -22,11 +22,7 @@ const client = new ApolloClient({
 
 
 ReactDOM.render(<ApolloProvider client={client}>
-    <div className="header">
-        <a href="#default" className="logo">Rick and Morty API</a>
-        <a className="active" href="/">Home</a>
-
-    </div>
+  
   <App />
 
 </ApolloProvider>,
