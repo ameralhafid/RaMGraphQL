@@ -31,8 +31,8 @@ export function EpisodeByID({ episode }) {
                         <div className="character__name">
                             <h3>{characters.name} </h3>
                         </div>
-                        <Button variant="contained" color="secondary" disableElevation>
-                            <Link exact to={`/character/${characters.id}`}>
+                        <Button variant="contained" className="btn btn-white" disableElevation>
+                            <Link to={`/character/${characters.id}`}>
                                 Character details ..
                             </Link>
                         </Button>

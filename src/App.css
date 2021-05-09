@@ -36,7 +36,7 @@ body {
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
-  line-height: 25px;
+  line-height: 15px;
   border-radius: 4px;
 }
 
@@ -184,6 +184,7 @@ body {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   overflow: hidden;
   margin-bottom: 20px;
+
 }
 
 .container .character__name {

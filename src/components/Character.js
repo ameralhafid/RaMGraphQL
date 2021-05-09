@@ -19,7 +19,7 @@ export function Character({ character}) {
                         <img src={character.image} alt={character.name} />
                     </div>
                     <Button variant="contained" color="yellow" disableElevation>
-                    <Link exact to={`/character/${character.id}`}>
+                    <Link to={`/character/${character.id}`}>
                         Character details ..
                     </Link>
                     </Button>

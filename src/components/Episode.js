@@ -17,7 +17,7 @@ export function Episode({episode}) {
         <div className="character__meta">
           <h4>{episode.air_date} </h4>
         </div>
-        <Button variant="contained" color="yellow" disableElevation>
+        <Button variant="contained"  disableElevation>
     <Link exact to={`/character/${episode.id}`}>
         Character details ..
     </Link>

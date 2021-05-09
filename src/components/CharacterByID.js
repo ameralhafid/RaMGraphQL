@@ -1,8 +1,9 @@
 import React from 'react';
-import {Link, Route, Switch, useParams} from "react-router-dom";
+import { Link} from "react-router-dom";
 import {Button} from "@material-ui/core";
-export function CharacterByID({ character }) {
 
+
+export function CharacterByID({ character }) {
 
     return (
 
@@ -11,33 +12,33 @@ export function CharacterByID({ character }) {
                     <img src={character.image} alt={character.name} />
                 </div>
                 <div className="character__name">
-                    <p>{character.name}</p>
+                    <h4>Name:{character.name}</h4>
                 </div>
                 <div className="character__meta">
 
-                    <span>{character.gender}</span>
+                    <span>gender: {character.gender}</span>
                 </div>
                 <div className="character__meta">
-                <span>{character.type}</span>
+                <span>type: {character.type}</span>
             </div>
                 <div className="character__meta">
-                <span>{character.species}</span>
+                <span>specification:{character.species}</span>
                      </div>
                 <div className="character__meta">
-                    <span>{character.status}</span>
+                    <span>status: {character.status}</span>
 
                 </div>
                 <div className="character__name">
-
+                    All episodes with "{character.name}"
                     {character.episode.map((episode, index) =>
                     <div key={index} className="containerE">
 
                         <div className="episode__name">
-                            <h3>{episode.name} </h3>
+                            <span>Episode's Name:</span>
                         </div>
-                        <Button variant="contained" color="secondary" disableElevation>
-                            <Link exact to={`/episode/${episode.id}`}>
-                                Episode details ..
+                        <Button variant="contained" className="btn btn-white" disableElevation>
+                            <Link  to={`/episode/${episode.id}`}>
+                                {episode.name}
                             </Link>
                         </Button>
 

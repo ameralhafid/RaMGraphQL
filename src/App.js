@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import './style/style.css';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from "@apollo/react-hooks";
 import { CharactersContainer} from './containers/CharactersContainer';
 import { EpisodeContainer} from './containers/EpisodeContainer';
-import {Route, BrowserRouter as Router, Link} from "react-router-dom";
+import {Route, BrowserRouter as Router} from "react-router-dom";
 import {Switch} from "react-router";
-import  Button from '@material-ui/core/Button';
-import {CharacterDetailContainer, EpisodeDetailContainer} from "./containers/CharacterDetailContainer";
-
+import {CharacterDetailContainer} from "./containers/CharacterDetailContainer";
+import Navbar from "./theme/Navbar";
+import {EpisodeDetailContainer} from "./containers/EpisodeDetailContainer";
 
 function App() {
 const client = new ApolloClient({
@@ -19,52 +18,43 @@ const client = new ApolloClient({
   return (
   <ApolloProvider client={client}>
   <div className="header">
-     <div class="logo-box">
-            <img scr="img/Rick_and_Morty.png" alt="Logo" class="logo">
+     <div className="logo-box">
+            <img scr="img/Rick_and_Morty.png" alt="Logo" className="logo">
 </img>
         </div>
-  <div class="text-box">
-    <h1 class="heading-primary">
-        <span class="heading-primary-main">Rick and Morty API</span>
+  <div className="text-box">
+    <h1 className="heading-primary">
+        <span className="heading-primary-main">Rick and Morty API</span>
        </h1>
-       <div class="heading-primary-sub">
-       <a href="/" class="btn btn-white">Home</a>
-       <a href="/characters" class="btn btn-white">Characters</a>
-       <a href="/episode" class="btn btn-white">Episodes</a>
+       <div className="sidebar">
+       <a href="/" className="btn btn-white">Home</a>
+       <a href="/characters" className="btn btn-white">Characters</a>
+       <a href="/episode" className="btn btn-white">Episodes</a>
        </div>
     </div>
     </div>
       <Router>
-          <Button variant="contained" color="primary" disableElevation>
-
-          <Link exact to="/episode">episodes</Link>
-      </Button>
-          <Button variant="contained" color="secondary" disableElevation>
-          <Link exact to="/characters">Characters</Link>
-          </Button>
-
-
+          <Navbar/>
       <Switch>
-          <Route exact path="/episode" component={EpisodeContainer}></Route>
-          <Route exact path="/characters" component={CharactersContainer}></Route>
-          <Route exact path={`/character/:id`}
+          <Route path="/episode" component={EpisodeContainer}></Route>
+          <Route path="/characters" component={CharactersContainer}></Route>
+          <Route path={`/character/:id`}
                  component={CharacterDetailContainer}/>
-
-          <Route exact path={`/episode/:id`}
+          <Route path={`/episode/:id`}
                  component={EpisodeDetailContainer}/>
       </Switch>
       </Router>
-  
+
     <main>
 
-        <div className="header">
-            <a href="#default" className="logo">SODEFA</a>
+        <div className="footer">
+            <a href="/" className="footer-copyright">SODEFA</a>
 
         </div>
    <p> Coding-Challenge Frontend</p>
       </main>
     </ApolloProvider>
-   
+
   );
 
 }

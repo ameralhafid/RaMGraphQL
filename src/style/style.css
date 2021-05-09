@@ -15,8 +15,8 @@ body {
 linear-gradient to make gradiented colorful background 
 */
 .header {
-    height: 95vh;
-    background-image:linear-gradient(right to bottom,rgb(157, 167, 157),rgb(207, 233, 219)),url(../img/ramBackImg.PNG);
+    height: 30vh;
+    background-image:linear-gradient(to right bottom, rgb(85, 78, 78), rgb(248, 248, 248)),url(../img/ramBackImg.PNG);
     background-size: cover;
     background-position: top;
     position: relative;
@@ -32,7 +32,8 @@ linear-gradient to make gradiented colorful background
 }
 
 .logo {
- height: 35px;
+ height: 60px;
+    width: 60px;
 
 }
 .text-box {
@@ -66,12 +67,16 @@ animation-delay: 1s;
 }
 
 .heading-primary-sub{
-display: block;
+    height: 50px;
+    display: block;
 font-size: 15px;
 font-weight: 400;
-letter-spacing: 5px;
--o-animation-duration: 1s;
-animation-name: moveInRight;
+letter-spacing: 3px;
+    background-color: white;
+animation-duration: 1s;
+    animation-name: moveInLeft;
+
+
 }
 
 @keyframes moveInLeft {
